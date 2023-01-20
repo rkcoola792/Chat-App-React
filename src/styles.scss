@@ -2,6 +2,26 @@ body {
   margin: 0;
 }
 
+// using mixins for responsivenes (sass function)
+
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
 // styling the register form using scss
 .formContainer {
   background-color: #a7bcff;
@@ -91,10 +111,14 @@ body {
     height: 80%;
     display: flex;
     overflow: hidden;
+    @include tablet {
+      width: 90%;
+    }
 
     .sidebar {
       flex: 1;
       background-color: #3e3c61;
+      position: relative;
 
       .navbar {
         display: flex;
@@ -107,6 +131,9 @@ body {
 
         .logo {
           font-weight: bold;
+          @include tablet {
+            display: none;
+          }
         }
 
         .user {
@@ -126,6 +153,10 @@ body {
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            @include tablet{
+             position: absolute; 
+             bottom: 10px;
+            }
           }
         }
       }
