@@ -74,3 +74,222 @@ body {
     font-size: 12px;
   }
 }
+
+// styling the Home page
+
+.home {
+  background-color: #a7bcff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .container {
+    border: 1px solid white;
+    border-radius: 10px;
+    width: 75%;
+    height: 80%;
+    display: flex;
+    overflow: hidden;
+
+    .sidebar {
+      flex: 1;
+      background-color: #3e3c61;
+
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50px;
+        padding: 10px;
+        color: #ddddf7;
+        background-color: #2f2d52;
+
+        .logo {
+          font-weight: bold;
+        }
+
+        .user {
+          display: flex;
+          gap: 10px;
+
+          img {
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+          button {
+            background-color: #5d5b8d;
+            color: #ddddf7;
+            font-size: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      // user chat
+      .userChat {
+        display: flex;
+        padding: 10px;
+        align-items: center;
+        gap: 10px;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #2f2d52;
+        }
+
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        .userChatInfo {
+          span {
+            font-size: 18px;
+            font-weight: bolder;
+          }
+          p {
+            font-size: 14px;
+            color: lightgrey;
+            margin: 2.5px;
+          }
+        }
+      }
+
+      .search {
+        border-bottom: 1px solid gray;
+
+        .searchForm {
+          padding: 10px;
+
+          input {
+            border: none;
+            color: white;
+            background-color: transparent;
+            outline: none;
+
+            &::placeholder {
+              color: lightgray;
+            }
+          }
+        }
+      }
+    }
+
+    // stylin the right chat  box
+    .chat {
+      flex: 2;
+
+      .chatInfo {
+        display: flex;
+        background-color: #5d5b8d;
+        height: 50px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        color: lightgray;
+
+        .chatIcons {
+          display: flex;
+          gap: 10px;
+
+          img {
+            width: 20px;
+          }
+        }
+      }
+      .messages {
+        background-color: #ddddf7;
+        padding: 10px;
+        height: calc(100% - 140px);
+        overflow: scroll;
+        .message {
+          display: flex;
+
+          gap: 20px;
+
+          .messageInfo {
+            display: flex;
+            flex-direction: column;
+            color: gray;
+            font-weight: 300;
+            margin-bottom: 15px;
+            img {
+              width: 40px;
+              height: 40px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+          .messageContent {
+            max-width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            p {
+              background-color: white;
+              padding: 10px 20px;
+              border-radius: 0 10px 10px 10px;
+              max-width: max-content;
+            }
+            img {
+              width: 50%;
+            }
+          }
+          &.owner {
+            flex-direction: row-reverse;
+            .messageContent {
+              align-items: flex-end;
+              p {
+                background-color: #8da4f1;
+                color: white;
+                border-radius: 10px 0 10px 10px;
+              }
+            }
+          }
+        }
+      }
+      .input {
+        height: 50px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        input {
+          outline: none;
+          width: 100%;
+          border: none;
+          font-size: 18px;
+
+          &::placeholder {
+            color: lightgray;
+          }
+        }
+
+        .send {
+          display: flex;
+          gap: 10px;
+          img {
+            height: 26px;
+            width: 26px;
+            cursor: pointer;
+          }
+          button {
+            margin-right: 10px;
+            border: none;
+            color: white;
+            padding: 10px 11px;
+            background-color: #7b96ec;
+          }
+        }
+      }
+    }
+  }
+}

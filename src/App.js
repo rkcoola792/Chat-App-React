@@ -1,10 +1,9 @@
-import {Login} from "./Pages/index";
-import Register from "./Pages/Register";
-import "./styles.scss"
+import { Login, Register,Home } from "./Pages/index";
+// import {}
+import "./styles.scss";
+
 function App() {
-  return(
-    <Register/>
-  )
+  return <Home />;
 }
 
 export default App;
