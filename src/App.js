@@ -1,9 +1,9 @@
 import { Login, Register,Home } from "./Pages/index";
-// import {}
+
 import "./styles.scss";
 
 function App() {
-  return <Home />;
+  return <Register />;
 }
 
 export default App;
