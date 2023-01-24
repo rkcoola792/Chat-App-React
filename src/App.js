@@ -1,5 +1,5 @@
 import { Login, Register, Home } from "./Pages/index";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import "./styles.scss";
 import { useContext } from "react";
@@ -10,10 +10,25 @@ function App() {
 
   console.log(currentUser);
 
+  // creating a protected route
+  const ProtectedRoute = ({ children }) => {
+    if (!currentUser) {
+      return <Navigate to="/login"></Navigate>;
+    }
+    return children;
+  };
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        ></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
       </Routes>
