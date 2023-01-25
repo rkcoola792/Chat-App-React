@@ -1,5 +1,5 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+
 import { useContext } from "react";
 import { AuthContext } from "../Context/AuthenticationContext";
 import { auth } from "../Firebase";
