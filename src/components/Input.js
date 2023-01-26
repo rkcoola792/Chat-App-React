@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../Context/AuthenticationContext";
+import { ChatContext } from "../Context/ChatContext";
 
 const Input = () => {
+  const [text, setText] = useState("");
+  const [img, setImg] = useState(null);
+
+  const { currentUser } = useContext(AuthContext);
+  const { data } = useContext(ChatContext);
+  const handleSend=()=>{
+
+    if(img){}
+
+    else{
+      
+    }
+
+  }
   return (
     <div className="input">
-      <input type="text" placeholder="Type here something..." />
+      
+      {/* forr ing text */}
+      <input type="text" onChange={e=>setText(e.target.value)} placeholder="Type here something..." />
       <div className="send">
         <img
           src="https://cdn-icons-png.flaticon.com/512/9291/9291878.png"
@@ -11,11 +29,14 @@ const Input = () => {
         />
 
         {/* for adding media  */}
-        <input type="file" id="file" style={{ display: "none" }} />
+        <input type="file" id="file" style={{ display: "none" }} onChange={e=>setImg(e.target.files[0])} />
         <label htmlFor="file">
-          <img src="https://cdn-icons-png.flaticon.com/512/4146/4146794.png" alt="" />
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4146/4146794.png"
+            alt=""
+          />
         </label>
-        <button>Send</button>
+        <button onClick={handleSend}>Send</button>
       </div>
     </div>
   );

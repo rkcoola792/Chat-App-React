@@ -1,6 +1,14 @@
 import React from "react";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthenticationContext";
+import { ChatContext } from "../Context/ChatContext";
 
-const Message = () => {
+const Message = ({ message }) => {
+  console.log(message);
+
+  const { currentUser } = useContext(AuthContext);
+  const { data } = useContext(ChatContext);
+
   return (
     <div className="message owner">
       <div className="messageInfo">
@@ -17,7 +25,6 @@ const Message = () => {
           alt=""
         />
       </div>
-      
     </div>
   );
 };

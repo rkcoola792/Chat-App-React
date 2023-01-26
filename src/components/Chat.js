@@ -1,11 +1,15 @@
 import React from "react";
+import { useContext } from "react";
+import { ChatContext } from "../Context/ChatContext";
 import { Messages, Input } from "./index";
 
 const Chat = () => {
+  const { data } = useContext(ChatContext);
+  console.log("In chats", data);
   return (
     <div className="chat">
       <div className="chatInfo">
-        <span>Jane</span>
+        <span>{data.user?.displayName}</span>
         <div className="chatIcons">
           <img
             src="https://cdn-icons-png.flaticon.com/128/8199/8199681.png"
