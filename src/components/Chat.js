@@ -4,6 +4,7 @@ import { ChatContext } from "../Context/ChatContext";
 import { Messages, Input } from "./index";
 
 const Chat = () => {
+  // using context API to fech the chat data
   const { data } = useContext(ChatContext);
   console.log("In chats", data);
   return (

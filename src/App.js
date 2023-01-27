@@ -1,4 +1,4 @@
-import { Login, Register, Home } from "./Pages/index";
+import { Login, Register, Home, PageNotFound } from "./Pages/index";
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import "./styles.scss";
@@ -31,6 +31,7 @@ function App() {
         ></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
     </BrowserRouter>
   );
