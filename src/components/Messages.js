@@ -23,17 +23,15 @@ const Messages = () => {
 
   console.log("In messages", messages);
   return (
-    <div className="messages">
-
-
-      {messages.map((m) => {
-        <Message message={m} key={m.id} />;
-        
-      })}
-
+   <div className="messages">
     
-    </div>
+      {messages.map((m)=>(
+        <Message message={m} key={m.id} ></Message>
+      ))}
     
+   </div>
+
+   
   );
 };
 
