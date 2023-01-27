@@ -153,9 +153,9 @@ body {
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            @include tablet{
-             position: absolute; 
-             bottom: 10px;
+            @include tablet {
+              position: absolute;
+              bottom: 10px;
             }
           }
         }
@@ -307,6 +307,7 @@ body {
         .send {
           display: flex;
           gap: 10px;
+
           img {
             height: 26px;
             width: 26px;
@@ -318,6 +319,7 @@ body {
             color: white;
             padding: 10px 11px;
             background-color: #7b96ec;
+            cursor: pointer;
           }
         }
       }

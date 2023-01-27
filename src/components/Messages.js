@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { ChatContext } from "../Context/ChatContext";
-import Message from "./Message";
+import { Message } from "./index";
 import { db } from "../Firebase";
 
 const Messages = () => {
@@ -20,12 +20,20 @@ const Messages = () => {
       unSub();
     };
   }, [data.chatId]);
+
+  console.log("In messages", messages);
   return (
     <div className="messages">
+
+
       {messages.map((m) => {
         <Message message={m} key={m.id} />;
+        
       })}
+
+    
     </div>
+    
   );
 };
 
